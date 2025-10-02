@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" href="/img/logo.png" type="image/png">
+    <title>Xhopii - Editar Funcionário</title>
+</head>
+<body>
+
+    <header>
+        <section id="cabecalho-logo">
+            <img src="/img/logo.png">
+            <h1>Xhopii</h1>
+        </section>
+        <section id="cabecalho-logout">
+            <a href="/login">Sair</a>
+        </section>
+    </header>
+
+    <nav class="menu-horizontal">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/clientes/cadastrar">Cadastro Cliente</a></li>
+            <li><a href="/funcionario/cadastrar">Cadastro Funcionário</a></li>
+            <li><a href="/produto/cadastrar">Cadastro Produto</a></li>
+            <li><a href="/enderecos/cadastrar">Cadastro Endereço</a></li>
+            <li><a href="/clientes/exibir">Ver Clientes</a></li>
+            <li><a href="/funcionarios/exibir">Ver Funcionários</a></li>
+            <li><a href="/produtos/exibir">Ver Produtos</a></li>
+            <li><a href="/enderecos">Ver Meus Endereços</a></li>
+        </ul>
+    </nav>
+
+    <section class="conteudo-cadastro">
+        <section class="conteudo-formulario-cadastro">
+            <form action="/funcionarios/editar/<%= funcionario._id %>" method="POST">
+                <label>Editar Funcionário</label>
+
+                <input type="text" name="nome" value="<%= funcionario.nome %>" placeholder="Nome" required>
+                <input type="text" name="sobrenome" value="<%= funcionario.sobrenome %>" placeholder="Sobrenome" required>
+                <input type="text" name="cpf" value="<%= funcionario.cpf %>" placeholder="CPF" required>
+                <input type="date" name="dataNascimento" value="<%= funcionario.dataNascimento.toISOString().split('T')[0] %>" required>
+                <input type="text" name="telefone" value="<%= funcionario.telefone %>" placeholder="Telefone" required>
+                <input type="text" name="cargo" value="<%= funcionario.cargo %>" placeholder="Cargo / Função" required>
+                <input type="number" name="salario" value="<%= funcionario.salario %>" placeholder="Salário" required step="0.01">
+                <input type="email" name="email" value="<%= funcionario.email %>" placeholder="E-mail" required>
+                <input type="password" name="senha" value="<%= funcionario.senha %>" placeholder="Senha" required>
+
+                <input id="botao" type="submit" value="Atualizar Funcionário">
+            </form>
+        </section>
+    </section>
+
+    <footer class="rodape">
+        <section class="conteudo-rodape-info">
+            <section class="conteudo-rodape">
+                <h5 id="rodape-titulo">Atendimento ao cliente</h5>
+                <a href="#">Central de Ajuda</a>
+                <a href="#">Como Comprar</a>
+                <a href="#">Métodos de Paramento</a>
+                <a href="#">Garantia Xhopii</a>
+                <a href="#">Devolução e Reembolso</a>
+                <a href="#">Fale Conosco</a>
+                <a href="#">Ouridoria</a>
+                <a href="#">Preferências de cookies</a>
+            </section>
+            <section class="conteudo-rodape">
+                <h5 id="rodape-titulo">Sobre a Xhopii</h5>
+                <a href="#">Sobre Nós</a>
+                <a href="#">Políticas Xhopii</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Programa de Ailiados da Xhopii</a>
+                <a href="#">Seja um Entregador Xhopii</a>
+                <a href="#">Ofertas Relâmpago</a>
+                <a href="#">Xhopii Blog</a>
+                <a href="#">Impresa</a>
+            </section>
+            <section class="conteudo-rodape">
+                <h5 id="rodape-titulo">Pagamento</h5>
+                <section class="conteudo-rodape-pagamento">
+                    <img id="img-pagamento" src="/img/logo-visa.png">
+                    <img id="img-pagamento" src="/img/logo-mastercard.png">
+                    <img id="img-pagamento" src="/img/logo-hipercard.png">
+                    <img id="img-pagamento" src="/img/logo-elo.png">
+                    <img id="img-pagamento" src="/img/logo-american-express.png">
+                    <img id="img-pagamento" src="/img/logo-boleto.png">
+                    <img id="img-pagamento" src="/img/logo-pix.png">
+                </section>               
+            </section>
+            <section class="conteudo-rodape">
+                <h5 id="rodape-titulo">Siga-nos</h5>
+                <a href="#"><img id="img-sociais" src="/img/logo-instagram.png">Instagram</a>
+                <a href="#"><img id="img-sociais" src="/img/logo-tiktok.png">Tik Tok</a>
+                <a href="#"><img id="img-sociais" src="/img/logo-twitter.png">X/Twitter</a>
+                <a href="#"><img id="img-sociais" src="/img/logo-facebook.png">Facebook</a>
+                <a href="#"><img id="img-sociais" src="/img/logo-linkedln.png">Linkedln</a>
+            </section>
+            <section class="conteudo-rodape">
+                <h5 id="rodape-titulo">Atendimento ao cliente</h5>
+                <img id="img-store" src="/img/qr-code.png">
+                <img id="img-store" src="/img/logo-store-apple.png">
+                <img id="img-store" src="/img/logo-google-play.png">
+            </section>
+        </section>
+        <hr>
+        <p>© 2025 Xhopii. Todos os direitos acadêmicos reservados</p>
+    </footer>
+
+</body>
+</html>
